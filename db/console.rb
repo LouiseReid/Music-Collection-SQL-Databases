@@ -2,6 +2,10 @@ require 'pry'
 require_relative('../models/albums')
 require_relative('../models/artists')
 
+Album.delete_all()
+Artist.delete_all()
+
+
 artist1 = Artist.new({
   'name' => 'Oasis'
   })
@@ -47,10 +51,19 @@ album4 = Album.new({
   'artist_id' => artist4.id
   })
 
+album5 = Album.new({
+  'title' => 'Heathen Chemistry',
+  'genre' => 'Brit Pop',
+  'artist_id' => artist1.id
+  })
+
 album1.save()
 album2.save()
 album3.save()
 album4.save()
+album5.save()
+
+
 
 binding.pry
 nil
